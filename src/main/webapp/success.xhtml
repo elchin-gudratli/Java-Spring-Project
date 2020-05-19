@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:h="http://java.sun.com/jsf/html"
+ xmlns:f="http://java.sun.com/jsf/core"
+ xmlns:p="http://primefaces.org/ui">
+<h:head>
+ <title>Spring JSF Hibernate Projesi</title>
+</h:head>
+<h:body>
+ <h:form>
+  <h:outputText value="Arabalar : "></h:outputText>
+  <p:dataTable id="arabalar" var="araba" value="#{ArabaMB.arabaList}" style="width: 10%">
+   <p:column>
+    <f:facet name="header">
+     <h:outputText value="ID" />
+    </f:facet>
+    <h:outputText value="#{araba.id}" />
+   </p:column>
+   <p:column>
+    <f:facet name="header">
+     <h:outputText value="Marka" />
+    </f:facet>
+    <h:outputText value="#{araba.marka}" />
+   </p:column>
+   <p:column>
+    <f:facet name="header">
+     <h:outputText value="Model" />
+    </f:facet>
+    <h:outputText value="#{araba.model}" />
+   </p:column>
+      <p:column>
+    <f:facet name="header">
+     <h:outputText value="Pencere" />
+    </f:facet>
+    <h:outputText value="#{araba.pencere}" />
+   </p:column>
+      <p:column>
+    <f:facet name="header">
+     <h:outputText value="Kapı" />
+    </f:facet>
+    <h:outputText value="#{araba.kapi}" />
+   </p:column>
+  </p:dataTable>
+ </h:form>
+</h:body>
+ 
+</html>

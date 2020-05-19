@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:p="http://primefaces.org/ui">
+ <h:head><title>Spring Hibernate Primeface Projesi</title></h:head>
+ <h:body>
+     <h:form>
+      <table>
+       <tr>
+        <td><h:outputLabel for="marka" value="Marka : " /></td>
+        <td><p:inputText id="marka" value="#{ArabaMB.marka}">
+          <f:validateLength minimum="2" />
+          <p:ajax event="blur" update="markaMsg" />
+         </p:inputText>
+         <p:message id="markaMsg" for="marka" display="icon"/>
+        </td>
+       </tr>
+       <tr>
+        <td><h:outputLabel for="model" value="Model : " /></td>
+        <td><p:inputText id="model" value="#{ArabaMB.model}">
+          <f:validateLength minimum="2" />
+          <p:ajax event="blur" update="modelMsg" />
+         </p:inputText>
+         <p:message id="modelMsg" for="model" display="icon"/>
+        </td>
+       </tr>
+       <tr>
+        <td><h:outputLabel for="pencere" value="Pencere : " /></td>
+        <td><p:inputText id="pencere" value="#{ArabaMB.pencere}">
+          <f:converter converterId="javax.faces.Integer"/>
+             <p:ajax event="blur" update="pencereMsg" />
+         </p:inputText>
+         <p:message id="pencereMsg" for="pencere" display="icon"/>
+        </td>
+       </tr>
+       <tr>
+        <td><h:outputLabel for="kapi" value="Kapı : " /></td>
+        <td><p:inputText id="kapi" value="#{ArabaMB.kapi}">
+          <f:converter converterId="javax.faces.Integer"/>
+             <p:ajax event="blur" update="kapiMsg" />
+         </p:inputText>
+         <p:message id="kapiMsg" for="kapi" display="icon"/>
+        </td>
+       </tr>
+          <tr>
+        <td><p:commandButton id="addAraba" value="Ekle" action="#{ArabaMB.addAraba}" ajax="false"/></td>
+        <td><p:commandButton id="reset" value="Temizle" action="#{ArabaMB.reset}" ajax="false"/></td>
+       </tr>
+      </table>
+     </h:form>
+</h:body>
+</html>
